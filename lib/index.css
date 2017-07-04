@@ -1,0 +1,23 @@
+.blue{
+  background-color: blue;
+  transition: all 1s ease-in;
+}
+
+.green{
+  background-color: green;
+  transition: all 1s ease-in;
+}
+
+.red{
+  background-color: red;
+  transition: all 1s ease-in;
+}
+
+.yellow{
+  background-color: yellow;
+  transition: all 1s ease-in;
+}
+
+.gray{
+  background-color: lightgray;
+}

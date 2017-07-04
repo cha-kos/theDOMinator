@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The DOMinator</title>
+    <script type="text/javascript" src="lib/jquery_lite.js"> </script>
+    <link rel='stylesheet' href='lib/index.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script type='text/javascript'>
+
+    let count = 1
+    const addLi = () => {
+      const input = ($l('.input').elArray[0].value)
+      $l('ul').append(`<li class=${count}> ${input}
+        <button onClick=removeItem('.${count}')>Remove</button> </li>`);
+      $l('.input').elArray[0].value = '';
+      count += 1;
+    }
+
+    const clearList = () => {
+      $l('ul').empty();
+    }
+
+    const removeItem = (input) => {
+      $(input).remove();
+    }
+
+    const switchColor = (input) => {
+      console.log(input);
+      $l('body').toggleClass(input)
+    }
+
+    </script>
+    <div class="">
+      <ul>
+        <li class="deh">Here's one</li>
+        <li>Here's two</li>
+        <li>And a third</li>
+      </ul>
+      <button onClick="clearList()"> Clear Todos</button>
+      <input type='text' value='' class='input'/>
+      <button onClick="addLi()"> Add ToDo </button>
+      <button onClick="switchColor('blue')">Blue</button>
+      <button onClick="switchColor('red')">Red</button>
+      <button onClick="switchColor('green')">Green</button>
+      <button onClick="switchColor('yellow')">Yellow</button>
+      <button onClick="switchColor('')">None</button>
+
+    </div>
+    <div>
+  </body>
+</html>
