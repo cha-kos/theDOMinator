@@ -1,20 +1,162 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Playfair Display', serif;*/
+}
+.body-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-explanation{
+  margin-top: 100px;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+}
+
+.todo{
+  width: 400px;
+  text-align: center;
+  margin-bottom: 100px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.add-todo:hover{
+  background-color: #40967B;
+  border-color: #40967B;
+}
+
+.clear-todos:hover{
+ background-color: #A76571;
+ border-color: #A76571;
+}
+
+.todo button{
+  background: white;
+  border: 2px solid lightgray;
+  outline: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.todo input{
+  outline: none;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+}
+.todo li{
+  text-align: left;
+}
+
+.background-toggle{
+  width: 400px;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.buttons{
+  padding-top: 10px;
+}
+
+.blue-button{
+  border: none;
+  background-color: #98D2EB;
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.blue-button:hover{
+  text-decoration: underline;
+
+}
+
+.red-button{
+  border: none;
+  background-color: #A76571;
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.red-button:hover{
+  text-decoration: underline;
+
+}
+
+.green-button{
+  border: none;
+  background-color: #40967B;
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.green-button:hover{
+  text-decoration: underline;
+
+}
+
+.yellow-button{
+  border: none;
+  background-color: #F9CF6B;
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.yellow-button:hover{
+  text-decoration: underline;
+
+}
+
+.none-button{
+  border: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.none-button:hover{
+  text-decoration: underline;
+
+}
+
 .blue{
-  background-color: blue;
+  background-color: #98D2EB;
   transition: all 1s ease-in;
 }
 
 .green{
-  background-color: green;
+  background-color: #40967B;
   transition: all 1s ease-in;
 }
 
 .red{
-  background-color: red;
+  background-color: #A76571;
   transition: all 1s ease-in;
 }
 
 .yellow{
-  background-color: yellow;
+  background-color: #F9CF6B;
   transition: all 1s ease-in;
 }
 

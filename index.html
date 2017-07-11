@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>The DOMinator</title>
-    <script type="text/javascript" src="lib/jquery_lite.js"> </script>
+    <script type="text/javascript" src="lib/theDOMinator.js"> </script>
     <link rel='stylesheet' href='lib/index.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
@@ -14,7 +16,7 @@
     const addLi = () => {
       const input = ($l('.input').elArray[0].value)
       $l('ul').append(`<li class=${count}> ${input}
-        <button onClick=removeItem('.${count}')>Remove</button> </li>`);
+        <button class='clear-todos' onClick=removeItem('.${count}')>Complete</button> </li>`);
       $l('.input').elArray[0].value = '';
       count += 1;
     }
@@ -33,22 +35,30 @@
     }
 
     </script>
-    <div class="">
-      <ul>
-        <li class="deh">Here's one</li>
-        <li>Here's two</li>
-        <li>And a third</li>
-      </ul>
-      <button onClick="clearList()"> Clear Todos</button>
-      <input type='text' value='' class='input'/>
-      <button onClick="addLi()"> Add ToDo </button>
-      <button onClick="switchColor('blue')">Blue</button>
-      <button onClick="switchColor('red')">Red</button>
-      <button onClick="switchColor('green')">Green</button>
-      <button onClick="switchColor('yellow')">Yellow</button>
-      <button onClick="switchColor('')">None</button>
-
+    <div class='body-wrap'>
+      <div class='title-explanation'>
+        <h1>Welcome to The DOMinator</h1>
+        <p> The DOMinator is a lean DOM manipulation software inspired by JQuery. Check out the examples below!</p>
     </div>
-    <div>
+    <div class="todo">
+      This is an example of a simple Todo list using The DOMinator. You can add Todos one at a time, delete one a time,
+      and also clear all if you have accomplished all Todos.
+      <ul>
+      </ul>
+      <input type='text' value='' class='input' onSubmit="addLi()"/>
+      <button onClick="addLi()" class='add-todo'> Add ToDo </button><br>
+      <button onClick="clearList()" class='clear-todos'> Clear Todos</button>
+    </div>
+    <div class='background-toggle'>
+      Choose your background color! Using The DOMinators toggleClass method, you can change a DOM's style attributes on the fly!
+      <div class='buttons'>
+        <button class='blue-button' onClick="switchColor('blue')">Blue</button>
+        <button class='red-button' onClick="switchColor('red')">Red</button>
+        <button class='green-button' onClick="switchColor('green')">Green</button>
+        <button class='yellow-button' onClick="switchColor('yellow')">Yellow</button>
+        <button class='none-button' onClick="switchColor('')">None</button>
+    </div>
+    </div>
+  </div>
   </body>
 </html>
