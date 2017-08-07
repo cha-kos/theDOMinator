@@ -134,4 +134,4 @@ an example ```$l.ajax``` function call to change the background image of the bod
 
 ## Demo
 
-  You can view a live demo of theDOMinator in action [here](www.chrishakos.com/theDOMinator).
+  You can view a live demo of theDOMinator in action [here](http://www.chrishakos.com/theDOMinator).
