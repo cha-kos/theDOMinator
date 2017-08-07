@@ -51,6 +51,7 @@ The core function, ```$l(selector)```, receives one argument and returns a array
   ```
 ### `DOMNodeCollection.prototype methods`
 
+  theDOMinator has a series of prototype functions which can be called upon the selection of a ```DOMNodeCollection``` using the ```$l``` function.
 
 #### `html(argument)`
 
@@ -101,34 +102,32 @@ The core function, ```$l(selector)```, receives one argument and returns a array
 #### `off(eve)`
   Removes Event Listener passed in as ```eve``` from each of the nodes in the ```DOMNodeCollection```.
 
+### AJAX requests
+
+  You can make AJAX requests using theDOMinator's ```$l.ajax(options)``` function. You must pass in an object in place of the ```options``` argument specifying the option values you wish to specify. You can see the default ```options``` object below.
+
+
+| Keys        | Defaults           |
+| ------------- |:-------------:|
+| contentType    | 'application/x-www-form-urlencoded; charset=UTF-8' |
+| method     | "GET"     |   
+|  url | ""    |
+|  dataType | "JSON"     |
+| success -- Callback function upon success | (s) => console.log("No Success Callback")      |
+| error -- Callback function upon error| (e) => console.log("No Error Callback")      |
+
+an example ```$l.ajax``` function call to change the background image of the body within an HTML file can be seen below.
 
 
   ```js
-
-
-
-  append(argument) {
-    if (argument instanceof HTMLElement){
-      argument = $l(argument);
-    }
-
-    if (typeof argument === 'string') {
-      this.elArray.forEach( (outerEl) => {
-          outerEl.innerHTML += argument;
-      });
-    } else {
-      this.elArray.forEach( (outerEl) => {
-        argument.elArray.forEach( (innerEl) => {
-          outerEl.innerHTML += innerEl.outerHTML;
-        });
-      });
-    }
-  }
-
-    toggleClass(className) {
-    this.elArray.forEach( (el) => {
-      el.className = className;
-    });
-  }
-
+  $l.ajax({
+       method: 'GET',
+       url: 'http://www.exampleurl.com/imagetoDisplay',
+       success: (data) => {
+         let body = $l("body").elements[0]
+         body.style.backgroundImage = ``
+         body.style.background = `url(${JSON.parse(data).url})`
+         body.style.backgroundSize = 'cover'
+       }
+     });
 ```
