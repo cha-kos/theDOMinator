@@ -16,7 +16,7 @@ To use theDOMinator library, simply clone the github repo into your existing pro
 ```
 Remember to properly navigate from your HTML file to the ```theDOMinator.js``` file for the script to be included.
 
-##theDOMinator API
+## theDOMinator API
 
 theDOMinator is built using a custom class called ```DOMNodeCollection```. All functions used within theDOMinator will return an instance of ```DOMNodeCollection```.
 
