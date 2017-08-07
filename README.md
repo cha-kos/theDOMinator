@@ -1,6 +1,6 @@
 # theDOMinator
 
-The DOMinator is an open source lean DOM manipulation library inspired by jQuery. This library enables users to
+The DOMinator is an open source, lean DOM manipulation library inspired by jQuery. This library enables users to
 
   * Select single or multiple DOM elements
   * Manipulate and Traverse DOM element's ```innerHTML```, class, etc.
