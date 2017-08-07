@@ -52,18 +52,21 @@ The core function, ```$l(selector)```, receives one argument and returns a array
 ### `DOMNodeCollection.prototype methods`
 
 
-#### ```html```
+#### ```html(argument)```
 
   Using the selector and calling the ```html``` method without an argument will return the ```innerHTML ```of the selected DOM. If an argument is provided, the ```innerHTML``` of the selected DOM will be replaced with the provided argument.
 
-#### ```empty```
+#### ```empty()```
 
-  This method clears out the ```innerHTML``` of the selected DOM.
+  This function clears out the ```innerHTML``` of the selected DOM.
 
-#### ```append```
+#### ```append(argument)```
 
   Append accepts an HTML element, theDOMinator wrapped collection, or string. The ```outerHTML``` of each element provided in the argument is then appended to the ```innerHTML``` of each element in the ```DOMNodeCollection```.
 
+#### ```attribute(attributeName, value)```
+
+  For the attribute function you must pass in two arguments. ```attributeName``` to select the attribute of the DOMNodeCollection. Passed in as an argument alone, this will return the ```value``` corresponding to the ```attributeName``` of the first element of the DOMNodeCollection. If a ```value``` is also passed in, The ```attributeName``` is then set equal to the passed in ```value``` for all elements in the DOMNodeCollection.
 
 
   ```js
