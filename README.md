@@ -1,16 +1,32 @@
 # theDOMinator
 
-A lean DOM manipulation software inspired by jQuery.
+The DOMinator is an open source lean DOM manipulation library inspired by jQuery. This library enables users to
 
-## Implementation
+  * Select single or multiple DOM elements
+  * Manipulate and Traverse DOM element's ```innerHTML```, class, etc.
+  * Perform AJAX requests
 
-- Uses Vanilla JavaScript to create simplified and convenient methods for quick and easy DOM manipulation. Check out the live version for a
-demo of appending to DOM objects along with toggling classes to instantly change DOM attributes.
+
+## Getting Started
+
+To use theDOMinator library, simply clone the github repo into your existing project and include ```theDOMinator.js``` file in the head of your Index or Root html file as so:
+
+```html
+  <script type="text/javascript" src="lib/theDOMinator.js"></script>
+```
+Remember to properly navigate from your HTML file to the ```theDOMinator.js``` file for the script to be included.
+
+##theDOMinator API
+
+theDOMinator is built using a custom class called ```DOMNodeCollection```. All functions used within theDOMinator will return an instance of ```DOMNodeCollection```.
+
+### `$l(selector)`
+
+The core function, ```$l(selector)```, receives one argument and returns a array like object otherwise known as a ```NodeList```. Depending on wether your ```(selector)``` argument is a string, HTML element, Array, or function, the ```DOMNodeCollection``` collection will return the correct ```NodeList``` based on the argument passed in as the ```(selector)```.
 
 ``` js
-
-  window.$l = function(argument){
-    //if HTMLElement
+  $l = function(argument){
+    //if HTML element
     if (argument instanceof HTMLElement) {
       return new DOMNodeCollection([argument]);
     // if String
@@ -32,6 +48,25 @@ demo of appending to DOM objects along with toggling classes to instantly change
       console.log("error");
     }
   };
+  ```
+### `DOMNodeCollection.prototype methods`
+
+
+#### ```html```
+
+  Using the selector and calling the ```html``` method without an argument will return the ```innerHTML ```of the selected DOM. If an argument is provided, the ```innerHTML``` of the selected DOM will be replaced with the provided argument.
+
+#### ```empty```
+
+  This method clears out the ```innerHTML``` of the selected DOM.
+
+#### ```append```
+
+  Append accepts an HTML element, theDOMinator wrapped collection, or string. The ```outerHTML``` of each element provided in the argument is then appended to the ```innerHTML``` of each element in the ```DOMNodeCollection```.
+
+
+
+  ```js
 
   append(argument) {
     if (argument instanceof HTMLElement){
@@ -50,7 +85,7 @@ demo of appending to DOM objects along with toggling classes to instantly change
       });
     }
   }
-  
+
     toggleClass(className) {
     this.elArray.forEach( (el) => {
       el.className = className;
@@ -58,4 +93,3 @@ demo of appending to DOM objects along with toggling classes to instantly change
   }
 
 ```
-

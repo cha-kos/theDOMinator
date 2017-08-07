@@ -2,6 +2,10 @@ body{
   font-family: 'Open Sans', sans-serif;
   /*font-family: 'Playfair Display', serif;*/
 }
+
+button{
+  cursor: pointer;
+}
 .body-wrap{
   display: flex;
   flex-direction: column;
