@@ -52,24 +52,60 @@ The core function, ```$l(selector)```, receives one argument and returns a array
 ### `DOMNodeCollection.prototype methods`
 
 
-#### ```html(argument)```
+#### `html(argument)`
 
   Using the selector and calling the ```html``` method without an argument will return the ```innerHTML ```of the selected DOM. If an argument is provided, the ```innerHTML``` of the selected DOM will be replaced with the provided argument.
 
-#### ```empty()```
+#### `empty()`
 
   This function clears out the ```innerHTML``` of the selected DOM.
 
-#### ```append(argument)```
+#### `append(argument)`
 
-  Append accepts an HTML element, theDOMinator wrapped collection, or string. The ```outerHTML``` of each element provided in the argument is then appended to the ```innerHTML``` of each element in the ```DOMNodeCollection```.
+  Append accepts an HTML element, theDOMinator wrapped collection, or string. The ```outerHTML``` of each element provided in the argument is then appended to the ```innerHTML``` of each node in the ```DOMNodeCollection```.
 
-#### ```attribute(attributeName, value)```
+#### `attribute(attributeName, value)`
 
-  For the attribute function you must pass in two arguments. ```attributeName``` to select the attribute of the DOMNodeCollection. Passed in as an argument alone, this will return the ```value``` corresponding to the ```attributeName``` of the first element of the DOMNodeCollection. If a ```value``` is also passed in, The ```attributeName``` is then set equal to the passed in ```value``` for all elements in the DOMNodeCollection.
+  For the attribute function you must pass in two arguments. ```attributeName``` to select the attribute of the ```DOMNodeCollection```. Passed in as an argument alone, this will return the ```value``` corresponding to the ```attributeName``` of the first node of the ```DOMNodeCollection```. If a ```value``` is also passed in, The ```attributeName``` is then set equal to the passed in ```value``` for all nodes in the ```DOMNodeCollection```.
+
+#### `addClass(className)`
+
+  Takes a ```string``` argument as ```className``` and sets the ```class``` attribute of each node in the ```DOMNodeCollection``` to the ```className``` provided.
+
+#### `removeClass(className)`
+
+  Takes a ```string``` argument as ```className``` and
+  removes the current ```class``` attribute of each node in the ```DOMNodeCollection```.
+
+#### `toggleClass(className)`
+
+  Takes a ```string``` argument as ```className``` and resets the ```class``` attribute of each node in the ```DOMNodeCollection``` to the ```className``` provided.
+
+
+#### `parent()`
+
+  Returns an array of all parents of each of the nodes in the ```DOMNodeCollection```.
+
+#### `find(selector)`
+
+  Returns a ```DOMNodeCollection``` of all the nodes matching the selector passed in as an argument that are descendants of the nodes.
+
+#### `remove()`
+
+  Removes the ```innerHTML``` of all nodes in the selected ```DOMNodeCollection```.
+
+#### `on(eve, callback)`
+
+  Adds an Event Listener to each of the nodes in the ```DOMNodeCollection```. Pass in your desired event as ```eve``` and desired callback function as ```callback```.
+
+#### `off(eve)`
+  Removes Event Listener passed in as ```eve``` from each of the nodes in the ```DOMNodeCollection```.
+
 
 
   ```js
+
+
 
   append(argument) {
     if (argument instanceof HTMLElement){
